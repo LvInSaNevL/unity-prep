@@ -93,6 +93,10 @@ req_install()
 optional_input = str.lower(input("Would you like to install optional packages? "))
 if optional_input == "y" or optional_input == "yes":
         optional_install()
-optional_input = str.lower(input("Would you like to install other programs? "))
-if optional_input == "y" or optional_input == "yes":
+software_input = str.lower(input("Would you like to install other programs? "))
+if software_input == "y" or software_input == "yes":
         software_install()
+os.system("sudo apt-get update && sudo apt-get update")
+reboot_option = str.lower(input("All packages and programs installed, would you like to reboot? "))
+if reboot_option == "y" or reboot_option == "yes":
+        os.system("reboot")
